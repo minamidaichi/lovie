@@ -1,0 +1,54 @@
+.dropAndDrop {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(245, 245, 245, .89);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  visibility: hidden;
+}
+
+.dad__window {
+  position: relative;
+  background: #FFFFFF;
+  box-shadow: 0 0 84px 0 rgba(68, 147, 255, .46);
+  border-radius: 500px;
+  height: 400px;
+  width: 400px;
+}
+
+.das__window__container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 35px;
+  text-align: center;
+}
+
+.char__subtitle {
+  margin-top: 36px;
+  color: #1F41A9;
+  font-weight: bold;
+  font-size: 24px;
+}

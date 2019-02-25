@@ -1,0 +1,6 @@
+Django==2.0
+numpy==1.12.1
+pandas==0.20.1
+mecab-python3==0.7
+psycopg2==2.7.3.1
+uwsgi==2.0.15

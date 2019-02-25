@@ -1,0 +1,20 @@
+{
+    "data":[
+        {
+        "id": 1,
+        "parent_id": null,
+        "path": "root/02NC",
+        "name": "02NC",
+        "m_time": "2017-08-10T12:19:34",
+        "size": null
+        },
+        {
+        "id": 830,
+        "parent_id": null,
+        "path": "root/04回線",
+        "name": "04回線",
+        "m_time": "2017-08-10T12:19:45",
+        "size": null
+        }
+    ]
+}

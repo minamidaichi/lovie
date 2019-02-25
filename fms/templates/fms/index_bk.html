@@ -1,0 +1,21 @@
+{% load static %}
+<html>
+   <body>
+      <a href="/"><img src="{% static "fms/images/logo.png" %}" alt="ロゴ"></a>
+      <form action = "/upload/" method = "POST" enctype = "multipart/form-data">
+        {% csrf_token %}
+        <dl>
+          <dd><input type = "file" name = "file" multiple/>
+          <dd><input type = "submit"/>
+        </dl>
+      </form>
+      <hr>
+      <h4>推奨フォルダ</h4>
+      {% for file_name, values in suggest_paths.items %}
+      <h4>ファイル名：{{ file_name }}</h4>
+        {% for e in values %}
+        <li>{{ e.path }}　score:{{ e.score|safe }}</li>
+        {% endfor %}
+      {% endfor %}
+   </body>
+</html>

@@ -1,0 +1,14 @@
+<div (dragover)="showUploadWindow($event)" (drop)="sendFileByDrop($event)" >
+  <div class="dropAndDrop" [ngStyle]="{'visibility': visible}">
+      <div class="dad__window">
+          <div class="das__window__container">
+              <div class="das__window__contents">
+                  <img src="static/fms/assets/upload.svg" alt="">
+                  <p class="char__subtitle">ドロップでファイルを<br>アップロード</p>
+              </div>
+          </div>
+      </div>
+  </div>
+  <app-sidemenu></app-sidemenu>
+  <app-fileviewer></app-fileviewer>
+</div>

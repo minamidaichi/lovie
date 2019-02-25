@@ -1,0 +1,42 @@
+.sideMenu{
+    position: fixed;
+    width: 272px;
+    height: 100vh;
+    background-image: linear-gradient(126deg, #2468D5 0%, #1E3BA3 86%);
+    box-shadow: 0 3px 9px 0 rgba(0, 0, 0, .22);
+}
+
+.searchBox{
+    width: 230px;
+    margin: 37px auto 0;
+    border-bottom: 1px #fff solid; 
+  }
+  
+  .image_search{
+    margin-bottom: 7px;
+  }
+  
+  .listItems{
+    margin-top: 66px;
+  }
+  
+  .listItem{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: #fff;
+    padding-left: 29px;
+    height: 50px;
+    box-sizing: border-box;
+  }
+  
+  .listItem:hover{
+    border: 1px solid rgba(255, 255, 255, .04);
+    border-left: none;
+    border-right: none;
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, .08) 0%, rgba(255, 255, 255, .00) 81%);
+    cursor: pointer;
+  }

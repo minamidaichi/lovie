@@ -1,0 +1,135 @@
+.filerArea{
+    height: 100vh;    
+    margin-left: 272px;
+    background-color: white;
+  }
+  
+  .filerArea_contents{
+    padding-left: 52px;
+    padding-right: 49px;
+    padding-top: 50px;
+    overflow-y: scroll;
+  }
+  
+  .filerArea_heading{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  
+  .filerArea_heading--rivers{
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  
+  .heading_ttl{
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .fileArea_filePath{
+    margin-top: 24px;
+    color: #A4A4A4;
+    font-size: 14px;
+  }
+  
+  .image_icon:first-child{
+    margin-right: 10px;
+  }
+  
+  /* fileListTable */
+  
+  .fileListTable{
+    margin-top: 50px;
+    width: 100%;
+    font-size: 14px;
+  }
+  
+  .fileListTable_heading{
+    text-align: left;
+  }
+  
+  td{
+    vertical-align: middle;
+  }
+  
+  .hasIcon--folder{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: inherit;
+    padding-left: 9px;
+  }
+  
+  .hasIcon--folder::before{
+    content: "";
+    display: block;
+    background-image: url(/assets/folder.svg);
+    background-repeat:no-repeat;
+    background-position: 50% 50%; 
+    width: 50px;
+    height: 50px;
+    margin-right: 9px;
+  }
+  
+  .hasIcon--file{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: inherit;
+    padding-left: 9px;
+  }
+  
+  .hasIcon--file::before{
+    content: "";
+    display: block;
+    background-image: url(/assets/file.svg);
+    background-repeat:no-repeat;
+    background-position: 50% 50%; 
+    width: 50px;
+    height: 50px;
+    margin-right: 9px;
+  }
+  
+  .fileListTable_coloum:hover{
+    background-color: #F8FBFF;
+    cursor: pointer;
+  }
+  
+  .fileListTable_coloum--head{
+    border-bottom: 1px solid #DDD;
+  }
+  
+  .fileListTable_coloum--head th{
+    padding-bottom: 8px;
+  }
+  
+  .fileListTable_coloum--head > :first-child{
+    min-width: 300px;
+    width: 30%;
+  }
+  
+  .fileListTable_coloum--head > :nth-child(2){
+    min-width: 150px;
+    width: 30%;
+  }
+  
+  .fileListTable_coloum{
+    height: 72px;
+    border-bottom: 1px solid #DDD;
+  }
+  
+  .fileListTable_coloum > :not(:first-child){
+    color: #A4A4A4;
+  }

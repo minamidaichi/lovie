@@ -1,0 +1,82 @@
+<div class="base__uploadScreen">
+    <div class="pathOptions">
+        <div *ngFor="let option of optionsList; trackBy:trackFile; let idx = index" class="pathOption__item" [ngClass]="accordionArray[idx] ? '' : 'pathOption__item--close'">
+            <div class="item__headingArea" 
+                 (click)="accordion(idx)">
+                <span class="score">SCORE: {{ option.score | number : '1.0-0'}}</span>
+                <span class="item__heading__path">{{  option.path }} </span>
+            </div>
+            <div class="filerArea_contents"
+                 (dragover)="logFunc($event, idx)"
+                >
+                <div class="filerArea_heading filerArea_heading--rivers">
+                    <div class="heading_icons">
+                        <img class="image_icon" src="static/fms/assets/list.svg" alt="">
+                        <img class="image_icon" src="static/fms/assets/grid.svg" alt="">
+                    </div>
+                </div>
+                <!-- <div class="fileArea_filePath">
+                    <p class="char_secondary">
+                        プロジェクトフォルダ / プロジェクト / プロジェクト
+                    </p>
+                </div> -->
+                <table class="fileListTable">
+                    <thead class="fileListTable_heading">
+                        <tr class="fileListTable_coloum--head">
+                            <th>ファイル名</th>
+                            <th>更新日</th>
+                            <th>サイズ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="fileListTable_coloum" *ngFor="let file of option.lower">
+                            <td class="hasIcon--folder">{{ file.name }}</td>
+                            <td>{{file.m_time}}</td>
+                            <td>{{file.size}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="uploadItemPalet">
+        <div class="filerArea_heading">
+            <p class="heading_ttl">
+                アップロードファイル
+            </p>
+        </div>
+        <div class="fileArea_filePath">
+            <p class="char_secondary">
+                フォルダにドラッグ&ドロップしてください
+            </p>
+        </div>
+        <div class="cardListItems">
+            <div *ngFor="let file of fileList; let idx = index;trackBy:trackFile"
+                 draggable="true"
+                 [style.display]="cardList[idx] ? 'block' : 'none'"
+                 (dropend)="disableCard($event, idx)"
+                 (dropover)="cancelEvent()"
+                 (drop)="cancelEvent()"
+                 >
+            <input  type="radio" 
+                    class="cardListRadioBtn"
+                    name="fileCard"
+                    id="cardListRadioBtn{{idx}}"
+                    >
+            <label  for="cardListRadioBtn{{idx}}" 
+                    class="cardListItem hasIcon--file" 
+                    (mousedown)="handleClick($event, idx)" 
+                    >
+                <div class="cardListItem__info">
+                    <p class="info__title" >
+                        {{ file.filename }}
+                    </p>
+                    <p class="info__subTitle">
+                        {{ file.options[0].path}}
+                    </p>
+                </div>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>

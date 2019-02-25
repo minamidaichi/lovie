@@ -1,0 +1,50 @@
+version: '2'
+
+services:
+    app:
+        # depends_onで依存関係を示す.appでpostgresを使いたいのでdbコンテナを指定.
+        depends_on:
+            - db
+        # build はDockerfileからビルドすることを示す.
+        # pathは相対パスになるので、build/app/Dockerfileが読まれる.
+        build: "./uwsgi"
+        # ports でポートフォワーディングを指定.
+        ports:
+            - "8000:8000"
+        # volumes でマウントの指定.こちらも相対パス.
+        volumes:
+            - "../:/var/www/lovie/"
+        # links で連携させるコンテナを示す.
+        # depends_onはビルド時に依存関係を考慮してビルドさせるために指定.
+        # links は appコンテナの/etc/hostsにdbのipを記述してくれる.
+        links:
+            - db
+        environment:
+            DATABASE_USER: hoge
+            DATABASE_PASSWORD: password
+            DATABASE_PORT: 5432
+            DATABASE_HOST: db
+        entrypoint: ["sh", "./devops/uwsgi/migrate.sh"]
+
+    db:
+        # image はbuildをせず既存イメージを用いる場合に使う.
+        build: "./postgres"
+        # environment は環境変数などのexportをしてくれる.
+        # mysqlのようにenvironmentで指定が必須の変数もあるので、公式イメージを利用する際には注意.
+        environment:
+            POSTGRES_USER: hoge
+            POSTGRES_PASSWORD: password
+        ports:
+            - "5432"
+        container_name: postgres-db
+        restart: always
+
+    nginx:
+        build: "./nginx"
+        links:
+            - app
+        volumes_from:
+            - app
+        ports:
+            - "80:80"
+        command: ["nginx", "-g", "daemon off;"]

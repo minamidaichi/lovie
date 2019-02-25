@@ -1,0 +1,34 @@
+<div class="filerArea" >
+    <div class="filerArea_contents">
+        <div class="filerArea_heading">
+            <p class="heading_ttl">
+                ファイル
+            </p>
+            <div class="heading_icons">
+                <img class="image_icon" src="static/fms/assets/list.svg" alt="">
+                <img class="image_icon" src="static/fms/assets/grid.svg" alt="">
+            </div>
+        </div>
+        <div class="fileArea_filePath">
+            <p class="char_secondary">
+                root /
+            </p>
+        </div>
+        <table class="fileListTable">
+            <thead class="fileListTable_heading">
+                <tr class="fileListTable_coloum--head">
+                    <th>ファイル名</th>
+                    <th>更新日</th>
+                    <th>サイズ</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="fileList">
+                <tr *ngFor="let file of fileList" class="fileListTable_coloum">
+                    <td class="hasIcon--folder">{{file.name}}</td>
+                    <td>{{file.m_time}}</td>
+                    <td>{{file.size}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
